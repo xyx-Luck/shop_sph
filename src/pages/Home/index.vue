@@ -11,8 +11,8 @@
     <!-- 猜你喜欢 -->
     <Like></Like>
     <!-- 楼层 -->
-    <Floor></Floor>
-    <Floor></Floor>
+    <Floor v-for="(floor,index) in floorList" :key="floor.id" :list="floor"></Floor>
+    
     <!-- 品牌 -->
     <Brand></Brand>
   </div>
@@ -24,6 +24,8 @@ import Rank from './Rank/index.vue'
 import Like from './Like/index.vue'
 import Floor from './Floor/index.vue'
 import Brand from './Brand/index.vue'
+import {reqbanner} from '@/api/index'
+import { mapState } from 'vuex'
 export default {
   components: {
     ListContainer,
@@ -32,7 +34,23 @@ export default {
     Like,
     Floor,
     Brand
-  }
+  },
+ 
+  data(){
+      return{
+          
+      }
+  },
+  computed:{
+      ...mapState({
+         floorList:(state)=>state.home.floorList 
+      })
+       
+  },
+  mounted(){
+       this.$store.dispatch('reqfloor');
+  },
+  methods:{},
 }
 </script>
 <style lang="less" rel="stylesheet/stylus">

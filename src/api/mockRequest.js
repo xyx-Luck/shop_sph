@@ -9,7 +9,7 @@ import 'nprogress/nprogress.css'
 console.log(nprogress)
 
 const request = axios.create({
-    baseURL: '/api',
+    baseURL: '/mock',
     timeout: 5000,
 })
 
