@@ -58,6 +58,11 @@ export default {
       keyword: ''
     }
   },
+  mounted(){
+      this.$bus.$on('clear',()=>{
+          this.keyword='';//清空搜索框中的数据
+      })
+  },
   methods: {
     toSearch () {
       //params传参
@@ -84,7 +89,8 @@ export default {
       }
        this.$router.push(locations);
       // this.$router.push({path:'/regist',query:{kw:this.keyword}})
-    }
+    },
+    
 
   }
 }

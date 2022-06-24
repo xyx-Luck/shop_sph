@@ -16,6 +16,10 @@ Vue.component('TypeNav', TypeNav)
 //注册轮播图组件
 Vue.component('banner', banner)
 new Vue({
+    //配置全局事件总线
+    beforeCreate(){
+        Vue.prototype.$bus=this;
+    },
     render: h => h(App),
     router,
     store

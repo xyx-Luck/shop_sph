@@ -5,3 +5,5 @@ export const category=()=> request.get('product/getBaseCategoryList')
 export const banner=()=>mockRequest.get('/banner')
 //请求楼层
 export const floor=()=>mockRequest.get('/floor')
+//搜索
+export const search=(params)=>request.post('/list',params)

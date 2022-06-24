@@ -6,7 +6,6 @@ import axios from 'axios'
 import nprogress from 'nprogress';
 //引入nprogress样式
 import 'nprogress/nprogress.css'
-console.log(nprogress)
 
 const request = axios.create({
     baseURL: '/mock',

@@ -1,7 +1,6 @@
 <template>
   <div id="app">
     <Header></Header>
-    我是根组件
     <router-view></router-view>
     <!-- 判断footer是否显示 -->
     <Footer v-show="$route.meta.showFooter"></Footer>

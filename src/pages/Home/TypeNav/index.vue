@@ -100,10 +100,6 @@ export default {
     }
   },
   methods: {
-    // changeBG(index){//修改以及分类的背景颜色
-    //     this.currentIndex=index
-    //     console.log(index);
-    // },
     changeBG: throttle(function (index) {
       this.currentIndex = index;
     }, 5000),
@@ -121,8 +117,7 @@ export default {
     goSearch (event) {//点击1  2  3 级分类跳转到搜索页
       //使用事件委托的方式，统一委托给父元素
       var target = event.target.dataset
-      console.log(target)
-      var categoryname = event.target.dataset.categoryname
+      var categoryName = event.target.dataset.categoryname
       var category1id = event.target.dataset.category1id
       var category2id = event.target.dataset.category2id
       var category3id = event.target.dataset.category3id
@@ -130,10 +125,10 @@ export default {
       //组织参数
       var location = {
         name: 'search',
-        query: { categoryname: categoryname }
+        query: { categoryName: categoryName }
       }
       //有属性data-categoryName 的就是目标对象
-      if (categoryname) {
+      if (categoryName) {
         //判断 1  2 还是3
         if (category1id) {
           location.query.category1Id = category1id
@@ -146,6 +141,7 @@ export default {
         if(this.$route.params.keyword){
             location.params=this.$route.params
         }
+        console.log(location)
         this.$router.push(location)
       }
       //判断
